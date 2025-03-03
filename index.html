@@ -14,36 +14,44 @@
             color: #fff;
             display: flex;
             justify-content: center;
-            align-items: center;
-            height: 100vh;
+            align-items: flex-start;
+            height: 100%;
             flex-direction: column;
+            box-sizing: border-box;
         }
 
         header {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: #111;
+            width: 100%;
         }
 
         h1 {
-            font-size: 3rem;
-            color: #ff6347; /* Pepper-themed color */
+            font-size: 4rem;
+            color: #ff6347;
             text-transform: uppercase;
             letter-spacing: 2px;
+            margin: 0;
         }
 
         .tagline {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             color: #aaa;
+            margin-top: 10px;
         }
 
         .btn {
-            background-color: #ff6347; /* Button color */
+            background-color: #ff6347;
             color: #fff;
-            padding: 10px 20px;
+            padding: 12px 24px;
             text-decoration: none;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             border-radius: 5px;
             transition: background-color 0.3s;
+            display: inline-block;
+            margin-top: 20px;
         }
 
         .btn:hover {
@@ -51,27 +59,41 @@
         }
 
         .content {
-            max-width: 1000px;
+            max-width: 1200px;
             padding: 20px;
+            margin: 0 15px;
             text-align: center;
+            width: 100%;
         }
 
         .section {
             background-color: #2a2a2a;
-            padding: 30px;
+            padding: 40px;
             border-radius: 10px;
-            margin-bottom: 20px;
+            margin-bottom: 40px;
         }
 
         .section h2 {
             color: #ff6347;
-            font-size: 2rem;
+            font-size: 2.5rem;
         }
 
         .section p {
             color: #ccc;
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        .section ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            color: #ccc;
             font-size: 1.1rem;
-            line-height: 1.6;
+        }
+
+        .section ul li {
+            margin-bottom: 15px;
         }
 
         footer {
@@ -80,6 +102,7 @@
             background-color: #111;
             text-align: center;
             width: 100%;
+            color: #ccc;
         }
 
         footer a {
@@ -91,6 +114,34 @@
         footer a:hover {
             text-decoration: underline;
         }
+
+        .testimonials {
+            background-color: #2a2a2a;
+            padding: 40px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+
+        .testimonial {
+            color: #ccc;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .testimonial .name {
+            font-weight: bold;
+            color: #ff6347;
+        }
+
+        .faq-item {
+            padding: 10px 0;
+            border-bottom: 1px solid #444;
+        }
+
+        .faq-item p {
+            margin: 5px 0;
+        }
     </style>
 </head>
 
@@ -101,28 +152,89 @@
     </header>
 
     <div class="content">
-        <div class="section">
-            <h2>Features</h2>
-            <p>Pepper X brings powerful, fast, and reliable execution for Roblox scripts with ease. Enjoy smooth performance, regular updates, and top-notch security for your Roblox experience.</p>
+        <!-- About Section -->
+        <div class="section" id="about">
+            <h2>About Pepper X</h2>
+            <p>Pepper X is the next evolution in Roblox execution, designed to give players an unbeatable edge in their Roblox gaming experience. With the latest features, fast performance, and a sleek interface, Pepper X allows users to execute Roblox scripts with ease, unlocking endless possibilities within the game.</p>
         </div>
 
-        <div class="section">
+        <!-- Features Section -->
+        <div class="section" id="features">
+            <h2>Features</h2>
+            <ul>
+                <li>Fast and stable script execution with high reliability.</li>
+                <li>Regular updates to ensure the latest features and security.</li>
+                <li>User-friendly interface, designed for both beginners and experienced users.</li>
+                <li>Advanced error handling and debugging tools to ensure smooth execution.</li>
+                <li>Support for all Roblox games and scripts, with no restrictions.</li>
+            </ul>
+        </div>
+
+        <!-- User Testimonials Section -->
+        <div class="testimonials">
+            <h2>What Users Are Saying</h2>
+            <div class="testimonial">
+                <p>"Pepper X has revolutionized my Roblox experience. It's fast, efficient, and the performance is unmatched. Highly recommend!"</p>
+                <p class="name">- JohnDoe22</p>
+            </div>
+            <div class="testimonial">
+                <p>"I’ve tried many executors, but Pepper X is by far the best. It's intuitive and stable, plus the updates are super frequent."</p>
+                <p class="name">- RobloxMaster99</p>
+            </div>
+        </div>
+
+        <!-- Download Section -->
+        <div class="section" id="download">
             <h2>Download Now</h2>
-            <p>Get your hands on Pepper X and experience Roblox like never before.</p>
+            <p>Get your hands on Pepper X and experience Roblox like never before. Join our community and access exclusive updates, support, and much more!</p>
             <a href="https://discord.gg/e29sBk4qhn" class="btn">Download Pepper X</a>
         </div>
 
-        <div class="section">
+        <!-- Installation Guide Section -->
+        <div class="section" id="installation">
+            <h2>Installation Guide</h2>
+            <p>Follow these steps to install Pepper X and start executing scripts with ease:</p>
+            <ul>
+                <li>Step 1: Download the Pepper X installer from the official link above.</li>
+                <li>Step 2: Run the installer and follow the on-screen instructions.</li>
+                <li>Step 3: Launch Pepper X and enter your Roblox username.</li>
+                <li>Step 4: Select the script you want to execute and press 'Start'.</li>
+                <li>Step 5: Enjoy unlimited Roblox possibilities!</li>
+            </ul>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="section" id="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>How do I install Pepper X?</h3>
+                <p>You can download the installer from the link in the "Download Now" section. Just follow the simple steps to get started.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Is Pepper X safe to use?</h3>
+                <p>Yes! Pepper X has been rigorously tested to ensure it’s safe to use. We prioritize user security and privacy.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can I use Pepper X on all Roblox games?</h3>
+                <p>Absolutely! Pepper X is compatible with all Roblox games and scripts, with no restrictions.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How can I report issues or bugs?</h3>
+                <p>If you encounter any issues, please visit our <a href="https://discord.gg/e29sBk4qhn" style="color: #ff6347;">support Discord</a> to get assistance from our team.</p>
+            </div>
+        </div>
+
+        <!-- Why Choose Pepper X Section -->
+        <div class="section" id="why-choose">
             <h2>Why Choose Pepper X?</h2>
-            <p>With cutting-edge technology and a sleek, easy-to-use interface, Pepper X is the go-to executor for Roblox players who want to push the limits of what's possible in the game.</p>
+            <p>With cutting-edge technology and a sleek, easy-to-use interface, Pepper X is the go-to executor for Roblox players who want to push the limits of what's possible in the game. Whether you're a casual player or a script enthusiast, Pepper X ensures top-tier performance and a seamless experience.</p>
         </div>
     </div>
 
     <footer>
         <p>&copy; 2025 Pepper X. All rights reserved.</p>
-        <p>For more info, visit <a href="#">Pepper X's Documentation</a></p>
+        <p>For more info, visit <a href="#">Pepper X's Documentation</a> or join our <a href="https://discord.gg/e29sBk4qhn">Discord</a>.</p>
     </footer>
 </body>
 
 </html>
-
