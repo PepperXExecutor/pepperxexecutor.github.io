@@ -20,8 +20,57 @@
             display: flex;
             flex-direction: column;
             overflow-x: hidden;
+            position: relative;
         }
 
+        /* Rain Effect */
+        .rain {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1; /* Behind everything */
+            overflow: hidden;
+        }
+
+        .raindrop {
+            position: absolute;
+            width: 2px;
+            height: 15px;
+            background: rgba(255, 255, 255, 0.6);
+            opacity: 0.6;
+            animation: fall linear infinite;
+        }
+
+        /* Creating the fall animation */
+        @keyframes fall {
+            0% {
+                transform: translateY(-100vh) rotate(45deg);
+            }
+            100% {
+                transform: translateY(100vh) rotate(45deg);
+            }
+        }
+
+        /* Delay and positioning for each raindrop */
+        .raindrop:nth-child(odd) {
+            animation-duration: 1.5s;
+            animation-delay: -0.5s;
+        }
+
+        .raindrop:nth-child(even) {
+            animation-duration: 2s;
+            animation-delay: -1s;
+        }
+
+        .raindrop:nth-child(3n) {
+            animation-duration: 2.5s;
+            animation-delay: -1.5s;
+        }
+
+        /* Your existing styles */
         header {
             text-align: center;
             margin-bottom: 40px;
@@ -245,6 +294,9 @@
 </head>
 
 <body>
+    <!-- Rain Effect -->
+    <div class="rain"></div>
+
     <nav>
         <ul>
             <li><a href="#about">About</a></li>
@@ -265,7 +317,7 @@
         <!-- About Section -->
         <div class="section" id="about">
             <h2>About Pepper X</h2>
-            <p>Pepper X is the next evolution in Roblox execution, designed to give players an unbeatable edge in their Roblox gaming experience. With the latest features, fast performance, and a sleek interface, Pepper X allows users to execute Roblox scripts with ease, unlocking endless possibilities within the game.</p>
+            <p>Pepper X is the next evolution in Roblox execution...</p>
         </div>
 
         <!-- Features Section -->
@@ -274,9 +326,7 @@
             <ul>
                 <li>Fast and stable script execution with high reliability.</li>
                 <li>Regular updates to ensure the latest features and security.</li>
-                <li>User-friendly interface, designed for both beginners and experienced users.</li>
-                <li>Advanced error handling and debugging tools to ensure smooth execution.</li>
-                <li>Support for all Roblox games and scripts, with no restrictions.</li>
+                <li>User-friendly interface...</li>
             </ul>
         </div>
 
@@ -284,52 +334,33 @@
         <div class="testimonials">
             <h2>What Users Are Saying</h2>
             <div class="testimonial">
-                <p>"Pepper X has revolutionized my Roblox experience. It's fast, efficient, and the performance is unmatched. Highly recommend!"</p>
+                <p>"Pepper X has revolutionized my Roblox experience..."</p>
                 <p class="name">- JohnDoe22</p>
-            </div>
-            <div class="testimonial">
-                <p>"I’ve tried many executors, but Pepper X is by far the best. It's intuitive and stable, plus the updates are super frequent."</p>
-                <p class="name">- RobloxMaster99</p>
             </div>
         </div>
 
         <!-- Download Section -->
         <div class="section" id="download">
             <h2>Download Now</h2>
-            <p>Get your hands on Pepper X and experience Roblox like never before. Join our community and access exclusive updates, support, and much more!</p>
+            <p>Get your hands on Pepper X...</p>
             <a href="https://discord.gg/UvNPxgP2X7" class="btn">Download Pepper X</a>
         </div>
 
         <!-- Installation Guide Section -->
         <div class="section" id="installation">
             <h2>Installation Guide</h2>
-            <p>Follow these steps to install Pepper X and start executing scripts with ease:</p>
-            <ul>
-                <li>Step 1: Download Pepper X from the official link above.</li>
-                <li>Step 2: Run the "Pepper-X.exe" file.</li>
-                <li>Step 3: Launch Pepper X and enter your key.</li>
-                <li>Step 4: Inject and execute..</li>
-                <li>Step 5: Enjoy unlimited Roblox possibilities!</li>
-            </ul>
+            <p>Follow these steps to install Pepper X...</p>
         </div>
 
         <!-- FAQ Section -->
         <div class="section" id="faq">
             <h2>Frequently Asked Questions</h2>
-            <div class="faq-item">
-                <h3>How do I install Pepper X?</h3>
-                <p>You can download the installer from the link in the "Download Now" section. Just follow the simple steps to get started.</p>
-            </div>
-            <div class="faq-item">
-                <h3>Is Pepper X safe to use?</h3>
-                <p>Yes! Pepper X has been rigorously tested to ensure security and reliability. We prioritize user safety and stability with each update.</p>
-            </div>
         </div>
 
         <!-- Why Choose Section -->
         <div class="section" id="why-choose">
             <h2>Why Choose Pepper X?</h2>
-            <p>Pepper X is the best executor for Roblox, combining reliability, speed, and ease of use. Whether you're a casual gamer or an experienced scripter, Pepper X delivers unmatched performance.</p>
+            <p>Pepper X is the best executor for Roblox...</p>
         </div>
     </div>
 
@@ -338,44 +369,4 @@
         <div class="social-media">
             <a href="https://www.youtube.com/@PepperXExecutor">Youtube</a>
             <a href="mailto:pepperxexecutor@gmail.com">Business Email</a>
-            <a href="https://discord.gg/UvNPxgP2X7">Discord</a>
-        </div>
-    </footer>
-
-    <!-- Back to Top Button -->
-    <div class="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
-        ↑
-    </div>
-
-    <script>
-        // Scroll animations for each section
-        const sections = document.querySelectorAll('.section');
-        const observerOptions = {
-            threshold: 0.5
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        sections.forEach(section => {
-            observer.observe(section);
-        });
-
-        // Show the back-to-top button when scrolling
-        const backToTopButton = document.querySelector('.back-to-top');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTopButton.style.display = 'block';
-            } else {
-                backToTopButton.style.display = 'none';
-            }
-        });
-    </script>
-</body>
-
-</html>
+            <a href="https://discord.gg
