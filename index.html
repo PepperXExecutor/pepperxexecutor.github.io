@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
     <style>
-        /* General body styles */
         html, body {
             height: 100%;
             margin: 0;
@@ -21,24 +20,8 @@
             display: flex;
             flex-direction: column;
             overflow-x: hidden;
-            cursor: none; /* Hide default cursor */
         }
 
-        /* Glowing dot cursor */
-        .cursor {
-            position: fixed;
-            width: 20px;
-            height: 20px;
-            background-color: #ff6347;
-            border-radius: 50%;
-            pointer-events: none;
-            transform: translate(-50%, -50%);
-            box-shadow: 0 0 10px rgba(255, 99, 71, 1), 0 0 20px rgba(255, 99, 71, 0.7);
-            transition: all 0.1s ease;
-            z-index: 10000; /* Ensure the cursor is on top */
-        }
-
-        /* Header */
         header {
             text-align: center;
             margin-bottom: 40px;
@@ -114,6 +97,24 @@
             color: #ff6347;
         }
 
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: #ff6347;
+            left: 0;
+            bottom: 0;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease-out;
+        }
+
+        nav ul li a:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
         .content {
             flex-grow: 1;
             max-width: 1200px;
@@ -121,6 +122,75 @@
             margin: 0 15px;
             text-align: center;
             width: 100%;
+        }
+
+        .section {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.5s ease;
+            background-color: rgba(42, 42, 42, 0.8);
+            padding: 40px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            box-shadow: 0 0 20px rgba(255, 99, 71, 0.3);
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section h2 {
+            color: #ff6347;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .section p {
+            color: #ccc;
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        .section ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            color: #ccc;
+            font-size: 1.1rem;
+        }
+
+        .section ul li {
+            margin-bottom: 15px;
+        }
+
+        .testimonials {
+            background-color: rgba(42, 42, 42, 0.8);
+            padding: 40px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+
+        .testimonial {
+            color: #ccc;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .testimonial .name {
+            font-weight: bold;
+            color: #ff6347;
+        }
+
+        .faq-item {
+            padding: 10px 0;
+            border-bottom: 1px solid #444;
+        }
+
+        .faq-item p {
+            margin: 5px 0;
         }
 
         footer {
@@ -142,12 +212,39 @@
         footer a:hover {
             text-decoration: underline;
         }
+
+        .social-media a {
+            color: #fff;
+            font-size: 2rem;
+            margin: 10px;
+        }
+
+        .social-media a:hover {
+            color: #ff6347;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #ff6347;
+            color: white;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 2rem;
+            cursor: pointer;
+            display: none;
+            z-index: 1000;
+            box-shadow: 0 0 15px rgba(255, 99, 71, 0.6);
+        }
+
+        .back-to-top:hover {
+            background-color: #e54b3e;
+        }
     </style>
 </head>
 
 <body>
-    <div class="cursor"></div> <!-- Glowing dot cursor -->
-
     <nav>
         <ul>
             <li><a href="#about">About</a></li>
@@ -165,9 +262,74 @@
     </header>
 
     <div class="content">
+        <!-- About Section -->
         <div class="section" id="about">
             <h2>About Pepper X</h2>
-            <p>Pepper X is the next evolution in Roblox execution, designed to give players an unbeatable edge in their Roblox gaming experience.</p>
+            <p>Pepper X is the next evolution in Roblox execution, designed to give players an unbeatable edge in their Roblox gaming experience. With the latest features, fast performance, and a sleek interface, Pepper X allows users to execute Roblox scripts with ease, unlocking endless possibilities within the game.</p>
+        </div>
+
+        <!-- Features Section -->
+        <div class="section" id="features">
+            <h2>Features</h2>
+            <ul>
+                <li>Fast and stable script execution with high reliability.</li>
+                <li>Regular updates to ensure the latest features and security.</li>
+                <li>User-friendly interface, designed for both beginners and experienced users.</li>
+                <li>Advanced error handling and debugging tools to ensure smooth execution.</li>
+                <li>Support for all Roblox games and scripts, with no restrictions.</li>
+            </ul>
+        </div>
+
+        <!-- Testimonials Section -->
+        <div class="testimonials">
+            <h2>What Users Are Saying</h2>
+            <div class="testimonial">
+                <p>"Pepper X has revolutionized my Roblox experience. It's fast, efficient, and the performance is unmatched. Highly recommend!"</p>
+                <p class="name">- JohnDoe22</p>
+            </div>
+            <div class="testimonial">
+                <p>"I’ve tried many executors, but Pepper X is by far the best. It's intuitive and stable, plus the updates are super frequent."</p>
+                <p class="name">- RobloxMaster99</p>
+            </div>
+        </div>
+
+        <!-- Download Section -->
+        <div class="section" id="download">
+            <h2>Download Now</h2>
+            <p>Get your hands on Pepper X and experience Roblox like never before. Join our community and access exclusive updates, support, and much more!</p>
+            <a href="https://discord.gg/UvNPxgP2X7" class="btn">Download Pepper X</a>
+        </div>
+
+        <!-- Installation Guide Section -->
+        <div class="section" id="installation">
+            <h2>Installation Guide</h2>
+            <p>Follow these steps to install Pepper X and start executing scripts with ease:</p>
+            <ul>
+                <li>Step 1: Download Pepper X from the official link above.</li>
+                <li>Step 2: Run the "Pepper-X.exe" file.</li>
+                <li>Step 3: Launch Pepper X and enter your key.</li>
+                <li>Step 4: Inject and execute..</li>
+                <li>Step 5: Enjoy unlimited Roblox possibilities!</li>
+            </ul>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="section" id="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>How do I install Pepper X?</h3>
+                <p>You can download the installer from the link in the "Download Now" section. Just follow the simple steps to get started.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Is Pepper X safe to use?</h3>
+                <p>Yes! Pepper X has been rigorously tested to ensure security and reliability. We prioritize user safety and stability with each update.</p>
+            </div>
+        </div>
+
+        <!-- Why Choose Section -->
+        <div class="section" id="why-choose">
+            <h2>Why Choose Pepper X?</h2>
+            <p>Pepper X is the best executor for Roblox, combining reliability, speed, and ease of use. Whether you're a casual gamer or an experienced scripter, Pepper X delivers unmatched performance.</p>
         </div>
     </div>
 
@@ -180,13 +342,38 @@
         </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <div class="back-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
+        ↑
+    </div>
+
     <script>
-        // Move cursor
-        const cursor = document.querySelector('.cursor');
-        
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = `${e.pageX}px`;
-            cursor.style.top = `${e.pageY}px`;
+        // Scroll animations for each section
+        const sections = document.querySelectorAll('.section');
+        const observerOptions = {
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Show the back-to-top button when scrolling
+        const backToTopButton = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
         });
     </script>
 </body>
