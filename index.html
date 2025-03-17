@@ -7,52 +7,71 @@
     <style>
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom, black, #1a073d);
+            font-family: 'Poppins', sans-serif;
+            background: radial-gradient(circle at top, #1a073d, black);
             color: white;
             text-align: center;
         }
         .navbar {
             display: flex;
             justify-content: space-between;
+            align-items: center;
             padding: 15px 30px;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.9);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .navbar div {
+            display: flex;
+            align-items: center;
         }
         .navbar a {
             color: white;
             text-decoration: none;
             margin: 0 15px;
+            font-size: 16px;
         }
         .download-btn {
             background: white;
             color: black;
             padding: 10px 20px;
-            border-radius: 5px;
+            border-radius: 8px;
             text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
         }
         .container {
-            margin-top: 100px;
+            margin-top: 120px;
             padding: 20px;
         }
         .title {
-            font-size: 40px;
+            font-size: 50px;
             font-weight: bold;
+            letter-spacing: -1px;
         }
         .subtitle {
             font-size: 18px;
-            color: #ccc;
+            color: #bbb;
             margin-top: 10px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
         .buttons {
             margin-top: 30px;
         }
         .btn {
-            display: inline-block;
-            padding: 12px 20px;
+            display: inline-flex;
+            align-items: center;
+            padding: 14px 22px;
             margin: 10px;
-            border-radius: 5px;
+            border-radius: 8px;
             text-decoration: none;
             font-size: 16px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
         .btn-download {
             background: white;
@@ -65,11 +84,14 @@
         .image-container {
             margin-top: 50px;
             padding-bottom: 50px;
+            display: flex;
+            justify-content: center;
         }
         .image-container img {
-            max-width: 100%;
+            max-width: 90%;
             height: auto;
             border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
         }
     </style>
 </head>
@@ -87,8 +109,8 @@
         <div class="title">Krnl's back, better than ever</div>
         <div class="subtitle">A powerful mobile Luau scripting engine, complete with a text editor and built-in script database.</div>
         <div class="buttons">
-            <a href="#" class="btn btn-download">Download for Android</a>
-            <a href="#" class="btn btn-discord">Join Discord</a>
+            <a href="#" class="btn btn-download">⬇️ Download for Android</a>
+            <a href="#" class="btn btn-discord">💬 Join Discord</a>
         </div>
     </div>
     <div class="image-container">
