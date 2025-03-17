@@ -16,10 +16,10 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 8px 20px;
+            padding: 10px 25px;
             background: rgba(0, 0, 0, 0.5);
             backdrop-filter: blur(10px);
-            border-radius: 8px;
+            border-radius: 12px;
             position: fixed;
             top: 20px;
             left: 50%;
@@ -35,7 +35,7 @@
         .download-btn {
             background: white;
             color: black;
-            padding: 10px 20px;
+            padding: 8px 16px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
@@ -94,4 +94,33 @@
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
         }
         .image-container::after {
-            content: \"\";\n            position: absolute;\n            bottom: 0;\n            left: 0;\n            width: 100%;\n            height: 100px;\n            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, black 100%);\n        }\n    </style>\n</head>\n<body>\n    <div class=\"navbar\">\n        <a href=\"#\">Contact</a>\n        <a href=\"#\">Discord</a>\n        <a href=\"#\">Docs</a>\n        <a href=\"#\" class=\"download-btn\">Download</a>\n    </div>\n    <div class=\"container\">\n        <div class=\"title\">Krnl's back, better than ever</div>\n        <div class=\"subtitle\">A powerful mobile Luau scripting engine, complete with a text editor and built-in script database.</div>\n        <div class=\"buttons\">\n            <a href=\"#\" class=\"btn btn-download\">⬇️ Download for Android</a>\n            <a href=\"#\" class=\"btn btn-discord\">💬 Join Discord</a>\n        </div>\n    </div>\n    <div class=\"image-container\">\n        <img src=\"preview.png\" alt=\"Krnl Editor Preview\">\n    </div>\n</body>\n</html>
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, black 100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#">Contact</a>
+        <a href="#">Discord</a>
+        <a href="#">Docs</a>
+        <a href="#" class="download-btn">Download</a>
+    </div>
+    <div class="container">
+        <div class="title">Krnl's back, better than ever</div>
+        <div class="subtitle">A powerful mobile Luau scripting engine, complete with a text editor and built-in script database.</div>
+        <div class="buttons">
+            <a href="#" class="btn btn-download">⬇️ Download for Android</a>
+            <a href="#" class="btn btn-discord">💬 Join Discord</a>
+        </div>
+    </div>
+    <div class="image-container">
+        <img src="preview.png" alt="Krnl Editor Preview">
+    </div>
+</body>
+</html>
