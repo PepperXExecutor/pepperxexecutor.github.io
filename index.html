@@ -5,19 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Krnl</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-        
         body {
             margin: 0;
             font-family: 'Poppins', sans-serif;
             background: radial-gradient(circle at top, #1a073d, black);
             color: white;
             text-align: center;
-            overflow-x: hidden;
         }
         .navbar {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             padding: 15px 30px;
             background: rgba(0, 0, 0, 0.9);
@@ -46,7 +43,7 @@
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
         }
         .container {
-            margin-top: 120px;
+            margin-top: 80px;
             padding: 20px;
         }
         .title {
@@ -89,18 +86,26 @@
             padding-bottom: 50px;
             display: flex;
             justify-content: center;
+            position: relative;
         }
         .image-container img {
             max-width: 90%;
             height: auto;
             border-radius: 15px;
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+            position: relative;
+        }
+        .image-fade {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, black 100%);
         }
     </style>
 </head>
 <body>
     <div class="navbar">
-        <div><strong>Krnl</strong></div>
         <div>
             <a href="#">Contact</a>
             <a href="#">Discord</a>
@@ -117,7 +122,8 @@
         </div>
     </div>
     <div class="image-container">
-        <img src="https://krnl.cat/assets/preview.png" alt="Krnl Editor Preview">
+        <img src="preview.png" alt="Krnl Editor Preview">
+        <div class="image-fade"></div>
     </div>
 </body>
 </html>
